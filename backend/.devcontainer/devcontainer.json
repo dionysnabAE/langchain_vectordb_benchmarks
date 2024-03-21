@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "backend-dev", // Name that shows up when doing <ctrl+P>
+
+	"dockerComposeFile": ["../../infra/docker-compose.yml","docker-compose.dev.yml"], // the docker compose file that we want to run
+	"service": "backend", // The service in docker-compose.yml that we want vs code to use as a dev containers 
+	"runServices": ["backend", "frontend"], //The only service that we want to start.
+
+	"shutdownAction": "stopCompose",
+	"workspaceFolder": "/workspace/", // The entrypoint to which vscode will go to. it is the folder in which vscode terminal starts.
+
+	 // Add the IDs of extensions you want installed when the container is created.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+				// Add the IDs of extensions you want installed when the container is created.
+				"extensions": ["ms-python.python", "eamodio.gitlens"],
+
+				// Setting the settings of python
+				"settings": {
+					"python.defaultInterpreterPath": "/usr/local/bin/python"}			
+		}
+		
+	},
+
+	"features": {
+		"github-cli": "latest"
+	}
+
+	//"mounts": [
+	//	//Re-use local Git configuration
+	//	"source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
+	  //]
+}

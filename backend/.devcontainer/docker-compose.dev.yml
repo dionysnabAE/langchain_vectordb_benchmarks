@@ -1,0 +1,9 @@
+services:
+  backend:  
+    build: 
+        context: .
+        target: "dev"
+    container_name: backend-dev
+    restart: always
+    volumes:
+      - ..:/workspace:cached

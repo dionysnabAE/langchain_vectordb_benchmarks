@@ -1,0 +1,9 @@
+services:
+  frontend:  
+    build: 
+        context: . 
+        target: "dev"  
+    container_name: frontend-dev
+    restart: always
+    volumes:
+      - ..:/workspace:cached

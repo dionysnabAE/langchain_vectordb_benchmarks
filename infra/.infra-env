@@ -1,0 +1,4 @@
+# .infra-env
+
+COMPOSE_PATH_SEPARATOR=:
+COMPOSE_FILE=vectorstores/qdrant/docker-compose.yml:vectorstores/milvus/docker-compose.yml:vectorstores/chroma/docker-compose.yml:docker-compose.yml
